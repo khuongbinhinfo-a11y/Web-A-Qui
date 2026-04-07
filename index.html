@@ -3,110 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web-A-Qui | Đồ da thật, thiết kế tinh gọn</title>
+    <meta name="description" content="Q Leather cung cấp các sản phẩm đồ da thiết kế tinh gọn, bền bỉ, phù hợp cho phong cách hằng ngày và làm quà tặng.">
+    <title>Q Leather | Đồ da đẹp cho phong cách hằng ngày</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom brand colors based on the "Premium but Accessible" concept */
         :root {
             --color-leather: #8B5A2B;
-            --color-bg: #FAFAF9; /* Warm off-white */
+            --color-bg: #FAFAF9;
         }
         body {
             background-color: var(--color-bg);
             font-family: 'Inter', sans-serif;
         }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
-<body class="text-gray-900 antialiased">
+<body class="text-gray-900 antialiased flex flex-col min-h-screen">
+
+    <script>
+        // Cấu hình URL Zalo để tránh hardcode rải rác
+        const CONFIG = {
+            ZALO_URL: "https://zalo.me/0901234567" // Đổi số điện thoại thực tế tại đây
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Gắn link Zalo
+            document.querySelectorAll('.zalo-link').forEach(el => {
+                el.href = CONFIG.ZALO_URL;
+            });
+
+            // Xử lý Mobile Menu Toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if(menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
 
     <!-- Header / Menu -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tight text-[#8B5A2B]">WEB-A-QUI</div>
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 -ml-2 text-gray-600 hover:text-[#8B5A2B] focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <a href="#" class="text-2xl font-bold tracking-tight text-[#8B5A2B]">Q LEATHER</a>
+            
             <nav class="hidden md:flex space-x-8 font-medium text-sm">
                 <a href="#" class="hover:text-[#8B5A2B] transition">Nam</a>
                 <a href="#" class="hover:text-[#8B5A2B] transition">Nữ</a>
                 <a href="#" class="hover:text-[#8B5A2B] transition">Ví Da</a>
-                <a href="#" class="hover:text-[#8B5A2B] transition">Balo & Túi</a>
+                <a href="#" class="hover:text-[#8B5A2B] transition">Túi & Balo</a>
+                <a href="#" class="hover:text-[#8B5A2B] transition">Dây Lưng</a>
                 <a href="#" class="hover:text-[#8B5A2B] transition">Quà Tặng</a>
+                <a href="#" class="hover:text-[#8B5A2B] transition">Liên Hệ</a>
             </nav>
+            
             <div class="flex items-center space-x-4">
-                <!-- Zalo floating or top CTA -->
-                <a href="#" class="bg-[#0068FF] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition">Chat Zalo</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="zalo-link hidden sm:inline-block bg-[#0068FF] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition">Chat Zalo</a>
             </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white absolute w-full left-0 top-full shadow-md pb-4">
+            <nav class="flex flex-col px-4 py-2 space-y-3">
+                <a href="#" class="text-gray-700 hover:text-[#8B5A2B] font-medium block py-2">Nam</a>
+                <a href="#" class="text-gray-700 hover:text-[#8B5A2B] font-medium block py-2">Nữ</a>
+                <a href="#" class="text-gray-700 hover:text-[#8B5A2B] font-medium block py-2">Ví Da</a>
+                <a href="#" class="text-gray-700 hover:text-[#8B5A2B] font-medium block py-2">Túi & Balo</a>
+                <a href="#" class="text-gray-700 hover:text-[#8B5A2B] font-medium block py-2">Dây Lưng</a>
+                <a href="#" class="text-gray-700 hover:text-[#8B5A2B] font-medium block py-2">Quà Tặng</a>
+                <a href="#" class="text-gray-700 hover:text-[#8B5A2B] font-medium block py-2">Liên Hệ</a>
+                <div class="pt-3 border-t border-gray-100 mt-2">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="zalo-link text-[#0068FF] font-semibold flex items-center py-2">
+                        Hỗ trợ qua Zalo
+                    </a>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section (Concept 1: Sang gọn) -->
-    <section class="relative bg-gray-100 h-[60vh] flex items-center justify-center text-center">
-        <!-- Placeholder for high-quality background image -->
-        <div class="absolute inset-0 bg-black/30 z-10"></div>
-        <img src="https://images.unsplash.com/photo-1547949003-9791a5f8c1a4?auto=format&fit=crop&q=80&w=2070" alt="Leather wallet" class="absolute inset-0 w-full h-full object-cover" />
+    <!-- Hero Section -->
+    <section class="relative bg-gray-100 h-[60vh] min-h-[500px] flex items-center justify-center text-center">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1547949003-9791a5f8c1a4?auto=format&fit=crop&q=80&w=2070" alt="Q Leather - Đồ da phong cách" class="absolute inset-0 w-full h-full object-cover" />
         <div class="relative z-20 max-w-2xl px-4">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Đồ da thật, thiết kế tinh gọn</h1>
-            <p class="text-lg text-gray-200 mb-8">Chất da tốt, form chuẩn, dùng mỗi ngày vẫn đẹp. Lựa chọn hoàn hảo cho sự bền bỉ theo thời gian.</p>
-            <a href="#collections" class="bg-white text-gray-900 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition">Khám phá bộ sưu tập</a>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Đồ da tinh gọn cho mỗi ngày</h1>
+            <p class="text-lg text-gray-200 mb-8">Thiết kế chỉn chu, dễ dùng và bền bỉ. Sự lựa chọn hợp lý cho phong cách cá nhân hoặc làm quà tặng.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#products" class="bg-white text-gray-900 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition">Xem sản phẩm</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="zalo-link border border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white/10 transition">Nhắn Zalo tư vấn</a>
+            </div>
         </div>
     </section>
 
-    <!-- 4 Nhóm nổi bật -->
+    <!-- Danh mục nổi bật -->
     <section id="collections" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 class="text-2xl font-bold mb-8 text-center">Danh Mục Nổi Bật</h2>
+        <div class="flex justify-between items-end mb-8">
+            <h2 class="text-2xl font-bold">Danh Mục Nổi Bật</h2>
+        </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            <!-- Category Card -->
-            <div class="group cursor-pointer">
-                <div class="bg-gray-200 aspect-square rounded-lg overflow-hidden mb-3">
+            <a href="#" class="group block">
+                <div class="bg-gray-200 aspect-[4/5] rounded-lg overflow-hidden mb-3 relative">
+                    <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition duration-300 z-10"></div>
                     <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&q=80&w=600" alt="Ví da" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                 </div>
-                <h3 class="font-semibold text-center group-hover:text-[#8B5A2B]">Ví Da</h3>
-            </div>
-            <div class="group cursor-pointer">
-                <div class="bg-gray-200 aspect-square rounded-lg overflow-hidden mb-3">
+                <h3 class="font-semibold text-center text-gray-900 group-hover:text-[#8B5A2B] transition-colors">Ví Da</h3>
+                <p class="text-xs text-center text-gray-500 mt-1">Gọn gàng, nhiều ngăn</p>
+            </a>
+            <a href="#" class="group block">
+                <div class="bg-gray-200 aspect-[4/5] rounded-lg overflow-hidden mb-3 relative">
+                    <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition duration-300 z-10"></div>
                     <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=600" alt="Túi xách" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                 </div>
-                <h3 class="font-semibold text-center group-hover:text-[#8B5A2B]">Túi Xách</h3>
-            </div>
-            <div class="group cursor-pointer">
-                <div class="bg-gray-200 aspect-square rounded-lg overflow-hidden mb-3">
+                <h3 class="font-semibold text-center text-gray-900 group-hover:text-[#8B5A2B] transition-colors">Túi Xách</h3>
+                <p class="text-xs text-center text-gray-500 mt-1">Thanh lịch, dễ phối</p>
+            </a>
+            <a href="#" class="group block">
+                <div class="bg-gray-200 aspect-[4/5] rounded-lg overflow-hidden mb-3 relative">
+                    <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition duration-300 z-10"></div>
                     <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=600" alt="Balo" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                 </div>
-                <h3 class="font-semibold text-center group-hover:text-[#8B5A2B]">Balo Da</h3>
-            </div>
-            <div class="group cursor-pointer">
-                <div class="bg-gray-200 aspect-square rounded-lg overflow-hidden mb-3">
+                <h3 class="font-semibold text-center text-gray-900 group-hover:text-[#8B5A2B] transition-colors">Balo Da</h3>
+                <p class="text-xs text-center text-gray-500 mt-1">Rộng rãi, chắc chắn</p>
+            </a>
+            <a href="#" class="group block">
+                <div class="bg-gray-200 aspect-[4/5] rounded-lg overflow-hidden mb-3 relative">
+                    <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition duration-300 z-10"></div>
                     <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&q=80&w=600" alt="Dây lưng" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                 </div>
-                <h3 class="font-semibold text-center group-hover:text-[#8B5A2B]">Dây Lưng</h3>
+                <h3 class="font-semibold text-center text-gray-900 group-hover:text-[#8B5A2B] transition-colors">Dây Lưng</h3>
+                <p class="text-xs text-center text-gray-500 mt-1">Phom chuẩn, bền bỉ</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sản phẩm nổi bật -->
+    <section id="products" class="bg-white py-16 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold mb-4">Sản Phẩm Nổi Bật</h2>
+                <div class="w-16 h-1 bg-[#8B5A2B] mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Product Items -->
+                <script>
+                    const products = [
+                        { name: "Ví da nam dáng ngang", price: "450.000 ₫", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=600&q=80", tag: "Bán chạy" },
+                        { name: "Túi đeo chéo gọn nhẹ", price: "890.000 ₫", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80", tag: "Mới" },
+                        { name: "Balo da công sở", price: "1.450.000 ₫", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80", tag: "" },
+                        { name: "Dây lưng nam khóa trượt", price: "550.000 ₫", img: "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=600&q=80", tag: "" },
+                        { name: "Ví nữ cầm tay", price: "650.000 ₫", img: "https://images.unsplash.com/photo-1547949003-9791a5f8c1a4?auto=format&fit=crop&w=600&q=80", tag: "Bán chạy" },
+                        { name: "Cặp táp doanh nhân", price: "1.850.000 ₫", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80", tag: "Mới" },
+                        { name: "Balo mini nữ tính", price: "1.150.000 ₫", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80", tag: "" },
+                        { name: "Ví đựng thẻ nhỏ gọn", price: "250.000 ₫", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=600&q=80", tag: "" }
+                    ];
+                    
+                    document.write(products.map(p => `
+                        <div class="group flex flex-col bg-white rounded-lg border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                            <a href="#" class="relative aspect-square overflow-hidden bg-gray-100 block">
+                                ${p.tag ? `<span class="absolute top-2 left-2 z-10 bg-black text-white text-[10px] font-bold uppercase tracking-wider py-1 px-2 rounded">${p.tag}</span>` : ''}
+                                <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                            </a>
+                            <div class="p-4 flex flex-col flex-1">
+                                <a href="#"><h3 class="text-sm text-gray-700 font-medium line-clamp-2 hover:text-[#8B5A2B] mb-2">${p.name}</h3></a>
+                                <div class="mt-auto">
+                                    <p class="text-lg font-bold text-gray-900">${p.price}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `).join(''));
+                </script>
             </div>
         </div>
     </section>
 
-    <!-- Khối: Vì sao chọn chúng tôi (Tạo niềm tin) -->
+    <!-- Chọn theo nhu cầu -->
+    <section id="needs" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-2xl font-bold mb-8 text-center">Gợi Ý Theo Nhu Cầu</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="#" class="bg-white rounded-lg p-6 text-center hover:bg-gray-50 shadow-sm border border-gray-100 hover:border-gray-300 transition-all">
+                <h3 class="font-bold text-lg text-gray-900 mb-2">Đi Làm</h3>
+                <p class="text-sm text-gray-500">Chỉn chu, tiện lợi</p>
+            </a>
+            <a href="#" class="bg-white rounded-lg p-6 text-center hover:bg-gray-50 shadow-sm border border-gray-100 hover:border-gray-300 transition-all">
+                <h3 class="font-bold text-lg text-gray-900 mb-2">Đi Chơi</h3>
+                <p class="text-sm text-gray-500">Gọn nhẹ, năng động</p>
+            </a>
+            <a href="#" class="bg-white rounded-lg p-6 text-center hover:bg-gray-50 shadow-sm border border-gray-100 hover:border-gray-300 transition-all">
+                <h3 class="font-bold text-lg text-gray-900 mb-2">Quà Tặng</h3>
+                <p class="text-sm text-gray-500">Đóng gói sang trọng</p>
+            </a>
+            <a href="#" class="bg-white rounded-lg p-6 text-center hover:bg-gray-50 shadow-sm border border-gray-100 hover:border-gray-300 transition-all">
+                <h3 class="font-bold text-lg text-gray-900 mb-2">Du Lịch</h3>
+                <p class="text-sm text-gray-500">Sức chứa tốt, bền bỉ</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Khối: Niềm tin -->
     <section class="bg-white py-16 border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div>
-                    <div class="w-12 h-12 bg-amber-100 text-[#8B5A2B] rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
-                    <h3 class="font-bold text-lg mb-2">Da Thật 100%</h3>
-                    <p class="text-gray-600 text-sm">Tuyển chọn chất liệu kỹ lưỡng, dùng càng lâu bề mặt da càng lên nước và đẹp.</p>
+                    <div class="w-12 h-12 bg-amber-50 text-[#8B5A2B] rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">✓</div>
+                    <h3 class="font-bold text-lg mb-2">Chất Liệu Chọn Kỹ</h3>
+                    <p class="text-gray-600 text-sm">Da được tuyển chọn kỹ lưỡng, đảm bảo lên form chuẩn và giữ độ bền qua thời gian sử dụng.</p>
                 </div>
                 <div>
-                    <div class="w-12 h-12 bg-amber-100 text-[#8B5A2B] rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
-                    <h3 class="font-bold text-lg mb-2">Bảo Hành Dài Hạn</h3>
-                    <p class="text-gray-600 text-sm">Hỗ trợ bảo hành đường may, khóa kéo, làm sạch và bảo dưỡng da trọn đời.</p>
+                    <div class="w-12 h-12 bg-amber-50 text-[#8B5A2B] rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">✂</div>
+                    <h3 class="font-bold text-lg mb-2">Hoàn Thiện Chỉn Chu</h3>
+                    <p class="text-gray-600 text-sm">Đường may đều đặn, góc cạnh xử lý tỉ mỉ mang lại sự tinh tế và trải nghiệm cầm nắm tốt.</p>
                 </div>
                 <div>
-                    <div class="w-12 h-12 bg-amber-100 text-[#8B5A2B] rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
-                    <h3 class="font-bold text-lg mb-2">Đổi Trả Dễ Dàng</h3>
-                    <p class="text-gray-600 text-sm">Đóng gói sang trọng, phù hợp làm quà tặng. Hỗ trợ đổi trả nhanh chóng trong 7 ngày.</p>
+                    <div class="w-12 h-12 bg-amber-50 text-[#8B5A2B] rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">↺</div>
+                    <h3 class="font-bold text-lg mb-2">Hỗ Trợ Rõ Ràng</h3>
+                    <p class="text-gray-600 text-sm">Cam kết đồng hành cùng khách hàng với chính sách đổi trả và bảo hành minh bạch.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Khách hàng đánh giá -->
+    <section class="bg-gray-50 py-16 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold mb-10 text-center">Khách Hàng Đánh Giá</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 mb-3 text-lg">★★★★★</div>
+                    <p class="text-gray-700 text-sm italic mb-4">"Ví mỏng gọn đúng ý mình, để túi quần không bị cộm. Đường may chắc chắn, nhìn rất ưng."</p>
+                    <div class="font-semibold text-sm">Anh Tuấn</div>
+                    <div class="text-xs text-gray-500">Nhân viên văn phòng</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 mb-3 text-lg">★★★★★</div>
+                    <p class="text-gray-700 text-sm italic mb-4">"Mua làm quà tặng, shop đóng gói đẹp. Da mềm và form túi rất tiện đi làm hằng ngày."</p>
+                    <div class="font-semibold text-sm">Chị Lan</div>
+                    <div class="text-xs text-gray-500">Kinh doanh tự do</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 mb-3 text-lg">★★★★★</div>
+                    <p class="text-gray-700 text-sm italic mb-4">"Balo rộng rãi, đựng vừa laptop 15 inch mà form vẫn đứng, không bị xẹp. Rất đáng tiền."</p>
+                    <div class="font-semibold text-sm">Anh Minh</div>
+                    <div class="text-xs text-gray-500">Thiết kế đồ họa</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Tìm món đồ da phù hợp cho bạn</h2>
+            <p class="text-gray-600 mb-8">Liên hệ ngay để được tư vấn kích thước, kiểu dáng và công năng chi tiết.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#products" class="bg-gray-900 text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-800 transition">Xem sản phẩm</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="zalo-link bg-white border border-gray-300 text-gray-900 px-8 py-3 rounded-md font-semibold hover:bg-gray-50 transition">Nhắn Zalo ngay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <a href="#" class="text-2xl font-bold tracking-tight text-[#8B5A2B] mb-4 block">Q LEATHER</a>
+                    <p class="text-sm text-gray-600 mb-6">Đồ da thiết kế tinh gọn, bền đẹp. Sự lựa chọn hợp lý cho nhu cầu sử dụng hằng ngày.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4">Danh Mục</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-[#8B5A2B]">Ví da nam/nữ</a></li>
+                        <li><a href="#" class="hover:text-[#8B5A2B]">Balo da công sở</a></li>
+                        <li><a href="#" class="hover:text-[#8B5A2B]">Túi xách da</a></li>
+                        <li><a href="#" class="hover:text-[#8B5A2B]">Dây lưng</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4">Hỗ Trợ</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-[#8B5A2B]">Chính sách đổi trả</a></li>
+                        <li><a href="#" class="hover:text-[#8B5A2B]">Chính sách bảo hành</a></li>
+                        <li><a href="#" class="hover:text-[#8B5A2B]">Giao hàng & Thanh toán</a></li>
+                        <li><a href="#" class="hover:text-[#8B5A2B]">Hướng dẫn mua hàng</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4">Liên Hệ</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li>Hotline: <a href="#" class="font-semibold hover:text-[#8B5A2B]">090 123 4567</a></li>
+                        <li>Email: hello@qleather.vn</li>
+                        <li>Giờ làm việc: 8:30 - 21:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 mt-12 pt-8 text-center text-sm text-gray-500">
+                &copy; 2024 Q Leather. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
     <!-- Sticky Zalo Button for Mobile/Desktop -->
-    <a href="https://zalo.me/YOUR_PHONE_NUMBER" target="_blank" class="fixed bottom-6 right-6 bg-[#0068FF] text-white p-4 rounded-full shadow-lg hover:bg-blue-600 hover:scale-105 transition z-50 flex items-center justify-center">
-        <span class="font-bold">Zalo</span>
+    <a href="#" target="_blank" rel="noopener noreferrer" class="zalo-link fixed bottom-6 right-6 bg-[#0068FF] text-white p-4 rounded-full shadow-lg hover:bg-blue-600 hover:scale-105 transition z-50 flex items-center justify-center">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.48 5.43 3.8 7.07L5 22l3.4-1.8c1.13.33 2.34.5 3.6.5 5.52 0 10-4.03 10-9s-4.48-9-10-9zm0 16.5c-1.15 0-2.25-.17-3.3-.47l-2.4 1.27.57-2.67C4.9 15.22 3.5 13.23 3.5 11c0-4.14 3.8-7.5 8.5-7.5s8.5 3.36 8.5 7.5-3.8 7.5-8.5 7.5z"/></svg>
     </a>
 
 </body>
