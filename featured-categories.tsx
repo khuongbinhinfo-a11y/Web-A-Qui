@@ -6,6 +6,10 @@ export function FeaturedCategories() {
     { title: "Túi Xách", href: "/danh-muc/tui-xach", image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=600" },
     { title: "Balo Da", href: "/danh-muc/balo-da", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=600" },
     { title: "Dây Lưng", href: "/danh-muc/day-lung", image: "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&q=80&w=600" }
+    { title: "Ví Da", description: "Gọn gàng, nhiều ngăn", href: "/danh-muc/vi-da", image: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&q=80&w=600" },
+    { title: "Túi Xách", description: "Thanh lịch, dễ phối", href: "/danh-muc/tui-xach", image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=600" },
+    { title: "Balo Da", description: "Rộng rãi, chắc chắn", href: "/danh-muc/balo-da", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=600" },
+    { title: "Dây Lưng", description: "Phom chuẩn, bền bỉ", href: "/danh-muc/day-lung", image: "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&q=80&w=600" }
   ];
 
   return (
@@ -31,6 +35,9 @@ export function FeaturedCategories() {
             <h3 className="font-semibold text-center text-gray-900 group-hover:text-brand-primary transition-colors">
               {category.title}
             </h3>
+            <p className="text-xs text-center text-gray-500 mt-1">
+              {category.description}
+            </p>
           </Link>
         ))}
       </div>
