@@ -61,6 +61,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  // plugins: [require("tailwindcss-animate")], // Bỏ comment dòng này sau khi đã chạy lệnh: npm install tailwindcss-animate
 };
 export default config;
